@@ -5,5 +5,10 @@
         public $content = "";
         public $style   = "";
         public $script  = "";
+
+        public function add_Css($href)
+        {
+            $this->style .="<link rel='stylesheet' href='$href'>"; 
+        }
     }
 ?>
