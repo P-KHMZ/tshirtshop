@@ -8,7 +8,7 @@
 
         public function add_Css($href)
         {
-            $this->style .="<link rel='stylesheet' href='$href'>"; 
+            $this->style .="<link rel='stylesheet' href='$href' type='text/css'>"; 
         }
     }
 ?>
