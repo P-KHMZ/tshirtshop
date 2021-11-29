@@ -6,7 +6,7 @@ return"
                 <div class='yui-b'>
                     <div id='header' class='yui-g'>
                         <a href='index.php'>
-                            <img src='images/tshirtshop.tif' alt='tshirtshop logo' />
+                            <img src='images/logo.jpg' alt='tshirtshop logo' />
                         </a>
                     </div>
                     <div id='contents' class='yui-g'>
