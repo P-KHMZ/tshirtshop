@@ -9,7 +9,7 @@
         //set user handler method for Error_Handler method
         public static function set_Handler($error_types = ERROR_TYPES)
         {
-            return set_error_handler(array('ErrorHandler', 'Hanler'), $error_types);
+            return set_error_handler(array('Error_Handler', 'Handler'), $error_types);
         }
         //error handler method
         public static function Handler($err_No, $errStr, $errFile, $errLine)
@@ -24,7 +24,7 @@
                              "$errLine, at" .date('F j, Y, g:i a') .
                              "\nShowing backtrace:\n$backtrace\n\n";
             //Email the error details, in case SEND_ERROR_MAIL is true
-            if(SEND_ERROR_MAIL === true)
+            if(SEND_ERROR_MAIL == true)
                 error_log($error_message, 1, ADMIN_ERROR_MAIL, "From :". SENDMAIL_FROM . "\r\nTo: ". ADMIN_ERROR_MAIL);
             //Log the error, in case LOG_ERRORS is TRUE
             if(LOG_ERRORS == true)

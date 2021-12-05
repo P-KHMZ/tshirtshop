@@ -1,13 +1,24 @@
 <?php
-    error_reporting(E_ALL);
-    ini_set("display_errors", 1);
-    include_once "models/page.class.php";
-    $site_data = new Site_Data();
-    $site_data ->add_Css("css/tshirtshop.css");
-    $site_data ->title    = "T-shirt_Shop Demo product catalog";
-    $site_data ->content  = "<h1>Welcome to the tshirtshop</h1><p>..Very soon e-commerce content here</p>";
-    $site_data ->content .= include_once "views/home.php";
-    $template = include_once "views/templates.php";
-    echo $template;
+    include_once "libs/smarty/Smarty.class.php";
+    // include_once "presentation/application.php";
+    $smarty  = new Smarty();
+    $smarty->testInstall();
+    // Include utility files
+    require_once 'include/config.php';
+    // Load the application page template
+    require_once PRESENTATION_DIR . 'application.php';
+    // $smarty->setTemplateDir(TEMPLATE_DIR);
+    // $smarty->setCompileDir(COMPILE_DIR);
+    // $smarty->setConfigDir(CONFIG_DIR);
+    $application = new Application();
+
+    // $application->setTemplateDir(TEMPLATE_DIR);
+    // $application->setCompileDir(COMPILE_DIR);
+    // $application->setConfigDir(CONFIG_DIR);
+    //$application->setCacheDir(CACHE_DIR);
+            
+    // Load Smarty template file
+    // Display the page
+    $application->display('store_front.tpl');
 ?>
 
