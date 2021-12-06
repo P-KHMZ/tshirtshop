@@ -1,7 +1,18 @@
 <?
+    // SITE_ROOT contains the full path to the tshirtshop folder
+    define('SITE_ROOT', dirname(dirname(__FILE__)));
+    // Application directories
+    define('PRESENTATION_DIR', SITE_ROOT.'/presentation/');
+    define('BUSINESS_DIR', SITE_ROOT.'/business/');
+    // Settings needed to configure the Smarty template engine
+    define('SMARTY_DIR', SITE_ROOT .'/libs/smarty/');
+    define('TEMPLATE_DIR', PRESENTATION_DIR .'templates');
+    define('COMPILE_DIR', PRESENTATION_DIR .'templates_c');
+    define('CONFIG_DIR', SITE_ROOT .'/include/configs');
+
     define('IS_WARNING_FATAL', true);
     define('DEBUGGING', true);
-    //the error types to be reprted
+    //the error types to be reported
     define('ERROR_TYPES', E_ALL);
     //settings about mailing the error messages to admin
     define('SEND_ERROR_MAIL', false);
