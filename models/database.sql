@@ -3,7 +3,7 @@ CREATE TABLE 'categories'(
     `category` VARCHAR(30) NOT NULL,
     PRIMARY KEY('id'),
     UNIQUE KEY 'category'('category')
-)ENGINE=MyISAM DEFAULT CHARSET=utf8;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 CREATE TABLE 'orders'(
     'id' INT UNSIGNED NOT NULL AUTO_INCREMENT,
     'user_id' INT UNSIGNED NOT NULL,
@@ -13,7 +13,7 @@ CREATE TABLE 'orders'(
     'payement_data_time' TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY('id'),
     KEY 'user_id'('user_id')
-)ENGINE=MyISAM DEFAULT CHARSET=utf8;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 CREATE TABLE 'pages'(
     'id' MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
     'category_id' SMALLINT UNSIGNED NOT NULL,
@@ -24,7 +24,7 @@ CREATE TABLE 'pages'(
     PRIMARY KEY('id'),
     KEY 'category_id'('category_id'),
     KEY 'creation_date'('date_created')
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 CREATE TABLE 'pdfs'(
     'id' SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
     'tmp_name' CHAR(40) NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE 'pdfs'(
     PRIMARY KEY('id'),
     UNIQUE KEY 'tmp_name'('tmp_name'),
     KEY 'date_created'('date_created')
-)ENGINE=MyISAM DEAFULT CHARSET=utf8;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 CREATE TABLE 'users'(
     'id' INT UNSIGNED NOT NULL AUTO_INCREMENT,
     'type' ENUM('member', 'admin') NOT NULL,
@@ -51,4 +51,4 @@ CREATE TABLE 'users'(
     PRIMARY KEY('id'),
     UNIQUE KEY 'username'('username'),
     UNIQUE KEY 'email'('email') 
-)ENGINE=MyISAM DEFAULT CHARSET=utf8;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
